@@ -18,25 +18,25 @@ function setup() {
 	world = engine.world;
 
 	//Create the Bodies Here.
-	roof1 = new roof(400,200,500,20)
+	roof1 = new roof(400,100,500,20)
 
-	bob1=new Bob(100,300)
-	bob2=new Bob(200,300)
-	bob3=new Bob(300,300)
-	bob4=new Bob(400,300)
-	bob5=new Bob(500,300)
+	bob1=new Bob(100,600)
+	bob2=new Bob(200,600)
+	bob3=new Bob(300,600)
+	bob4=new Bob(400,600)
+	bob5=new Bob(500,600)
 
-	rope1 = new rope(bob1.body,roof1.body)
-	rope2 = new rope(bob2.body,roof1.body)
-	rope3 = new rope(bob3.body,roof1.body)
-	rope4 = new rope(bob4.body,roof1.body)
-	rope5 = new rope(bob5.body,roof1.body)
+	rope1 = new rope(bob1.body,roof1.body,-100,0)
+	rope2 = new rope(bob2.body,roof1.body,-50,0)
+	rope3 = new rope(bob3.body,roof1.body,0,0)
+	rope4 = new rope(bob4.body,roof1.body,50,0)
+	rope5 = new rope(bob5.body,roof1.body,100,0)
   
 }
 
 
 function draw() {
-  background(0);
+  background(255,255,255);
   Engine.update(engine)
 
   bob1.display()
@@ -47,16 +47,18 @@ function draw() {
 
   roof1.display()
 
-  /*rope1.display()
+  rope1.display()
   rope2.display()
   rope3.display()
   rope4.display()
   rope5.display()
-  */
+  
 
   drawSprites();
  
 }
-
-
-
+function keyPressed(){ 
+if (keyCode === UP_ARROW) { 
+Matter.Body.applyForce(bob1.body,bob1.body.position,{x:-50,y:-45}); 
+  } 
+}

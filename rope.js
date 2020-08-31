@@ -5,8 +5,6 @@ class rope{
         this.offsetX = offsetX
         this.offsetY = offsetY
         var options = {
-            stiffness: 0.04,
-            length: 14,
             bodyA:body1,
             bodyB:body2,
             pointB:{x:this.offsetX,y:this.offsetY}

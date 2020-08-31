@@ -5,7 +5,7 @@ var options = {
 		isStatic:false,
 		restitution:0.3,
 		friction:0.5,
-		density:1.2
+		density:0.8
         }
         this.body=Bodies.circle(x,y,15,options)
         this.radius = 15;
